@@ -1,0 +1,7 @@
+Update our package manager
+sudo apt update
+
+Install nginx
+sudo apt install nginx -y
+
+Exercise - Setup 2x EC2 with ports 80 and 22 open, install nginx on both machines
