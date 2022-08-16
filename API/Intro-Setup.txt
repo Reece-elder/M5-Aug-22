@@ -1,0 +1,28 @@
+sudo apt update
+
+Install python 
+sudo apt install python3 python3-pip python3-venv -y
+
+Set up our python environment
+python3 -m venv venv
+
+Setup the installation
+source venv/bin/activate
+pip3 install flask
+
+Create our python app
+touch app.py
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/hello')
+def helloInternet():
+    return "Hello World!"
+
+if __name__=='__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
+
+Exercise - API Lab Task 1
+Create a basic Flask API that listens for /name and prints "Hello <name>"
