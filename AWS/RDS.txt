@@ -1,0 +1,16 @@
+Update the package manager
+sudo apt update
+sudo apt-get update
+
+Install mysql client
+sudo apt install mysql-client -y
+
+Connect to our RDS
+mysql -h <endpoint> -P 3306 -u admin -p
+
+Type in your password and press enter
+
+database-1.c3akykfeg5q3.eu-west-1.rds.amazonaws.com
+
+Exercise - Connect to your RDS
+Stretch goal - Explore the RDS, See what databases and tables are already there (google for the syntax..)
