@@ -14,3 +14,13 @@ database-1.c3akykfeg5q3.eu-west-1.rds.amazonaws.com
 
 Exercise - Connect to your RDS
 Stretch goal - Explore the RDS, See what databases and tables are already there (google for the syntax..)
+
+mysql -h <endpoi>.. <  sample_data_movies_mysql.sql
+
+Exercise - Add the .sql file to your MySQL and answer the following queries
+
+All movies with a runtime over 100
+All movies with more than 1000 votes
+All movies in order of popularity
+All people with an id between 10000 - 12000
+All people in name ascending order (limit to 1000)
