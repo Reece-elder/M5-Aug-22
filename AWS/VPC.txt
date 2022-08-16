@@ -1,0 +1,13 @@
+1) Create VPC and set the CIDR block
+2) Create Subnets and specify the VPC to use
+3) Give your Subnets appropriate CIDR blocks 
+4) Edit Subnets to auto assign public IPs
+5) Create Internet Gateway
+6) Attach your gateway to your VPC
+7) Access the Route Table for your VPC, and edit the Subnet Associations. Add all subnets as associations and save changes
+8) Edit routes of our RT and Add a route for IGW (Dest = 0.0.0.0/0. target = custom IGW)
+9) Create an EC2 in that VPC
+
+Exercise - Create a VPC from scratch with 2x subnets, 1 SG and 1 EC2 per subnet with both belonging to the same SG. 
+
+Stretch goal - SSH into both ec2s and install nginx, allow the SG to have port 80 accessible
