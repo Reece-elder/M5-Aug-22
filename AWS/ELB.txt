@@ -5,3 +5,24 @@ Install nginx
 sudo apt install nginx -y
 
 Exercise - Setup 2x EC2 with ports 80 and 22 open, install nginx on both machines
+
+Navigate to nginx default html
+cd /var/www/html
+
+Edit our nginx html
+sudo nano index..html
+
+Setup Load Balancer
+
+From EC2 dashboard go to Load balanacers
+
+Create Load Balancer
+Application Load Balancer
+Internet Facing
+IPv4
+Select Mappings for your EC2 instances
+Create a target group of our instances
+Select the correct instances for your target group
+
+Exercise - Follow the lab and notepad to create an ELB for your two instances
+Suggestion - stretch goal set up another EC2 in a different AV Zone / subnet
