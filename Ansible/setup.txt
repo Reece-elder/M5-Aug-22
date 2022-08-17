@@ -1,0 +1,21 @@
+Update our package manager
+sudo apt update
+
+Install software-properties-common
+sudo apt install software-properties-common -y
+
+Adding the Ansible repo to our package manager
+sudo apt-add-repository -y --update ppa:ansible/ansible
+
+Installing ansible
+sudo apt install ansible
+
+Sanity Checking ansible
+ansible --version
+
+Ansible nginx install command inline to install nginx
+ansible 127.0.0.1 -m apt -a "name=nginx state=present update_cache=true" --become 
+
+Exercise - Lab 1 Ansible Setup - installing Nginx on a new EC2 
+
+Stretch goal- Install unzip
