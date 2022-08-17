@@ -1,0 +1,14 @@
+apt - Package manager (installing, updating, deleting)
+
+service - Starting and stopping, restarting services
+
+copy - Copies files from the Host EC2 (where Ansible is installed) to the node
+
+script - Runs a local script on the node
+
+debug - Prints messages to the console
+
+register - Takes the JSON object of a task, and saves it as a variable for use 
+
+user - Create, update and delete users from the node
+
