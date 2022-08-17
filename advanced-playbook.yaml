@@ -1,0 +1,27 @@
+- hosts: demo
+  become: true
+  tasks:
+  - name: 'install nginx'
+    apt:
+      name: nginx
+      state: latest
+      update_cache: true
+
+  - name: 'Add nginx conf'
+    copy: 
+      src: nginx.conf
+      dest: /etc/nginx/nginx.conf
+    register: adding_output
+
+  - name: 'Restart our service'
+    service: 
+      name: nginx
+      state: restarted
+
+  - name: 'Sanity test'
+    debug: 
+      msg: "nginx started"
+
+  - name: 'Printing variable'
+    debug:
+      msg: "{{ adding_output }}"
