@@ -1,4 +1,25 @@
 - hosts: demo
+  become: true
   tasks:
-  - name: "Ping"
-    ping:
+  - name: 'Install nginx'
+    apt:
+      name: nginx
+      state: latest
+      update_cache: true
+  - name: 'nginx service is running'
+    service:
+      name: nginx
+      state: started
+  - name: 'Install curl'
+    apt:
+      name: curl
+      state: latest
+      update_cache: true
+  - name: 'stopping nginx service'
+    service:
+      name: nginx
+      state: stopped
+
+- hosts: nginx
+  tasks:
+  - name: 'setup nginx'
