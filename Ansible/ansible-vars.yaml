@@ -1,0 +1,41 @@
+# Using variable from command line
+# Variables are read when surrounded in {{ <variable> }}
+# ansible-playbook -i inventory.yaml var-playbook.yaml -v -e name=reece
+- hosts: all
+  become: true
+  vars:
+    var_package: wget
+  tasks:
+  - name: 'Print Name'
+    debug: 
+      msg: "{{ name }}"
+
+  - name: 'Install chosen package'
+    apt: 
+      name: "{{ var_package }}"
+      state: latest
+
+# Handlers within Ansible are used to modulise our playbook, and allows us to repeat tasks easily. 
+# Rather than running a new task, simply 'notify the handler' to run after this task
+
+- hosts: all
+  become: true
+  tasks:
+  - name: 'Copy nginx conf'
+    copy: 
+      src: nginx.conf
+      dest: /etc/nginx/nginx.conf
+    notify: 'Restart nginx'
+  - name: 'Copy HTML file'
+    copy:
+      src: index.html
+      dest: /usr/nginx/share/html/index.html
+    notify: 'Restart nginx'
+
+
+# Creating a handler called 'restart nginx'
+  handlers:    
+  - name: 'Restart nginx'
+    service:
+      name: nginx
+      state: restarted
