@@ -1,0 +1,13 @@
+# Because this is a role and not a task, we don't specify a host
+- name: 'install unzip'
+  apt: 
+    name: unzip
+    state: latest
+    update_cache: true
+
+- name: Add the user 'johnd' with a specific uid and a primary group of 'admin'
+  user:
+    name: cool-dev
+    comment: cool dev worker
+    uid: 1040
+    group: admin
